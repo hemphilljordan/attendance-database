@@ -547,11 +547,14 @@ function showStudentStats(studentName){
     
 
     studentRoster.innerHTML = `
+    <div class="child-info">
     <p><strong>Parent Name: </strong> <span id="student-name2">${childsParent.name}</span></p>
     <p><strong>Phone Number: </strong> <span id="lesson-time2">${childsParent.phoneNumber}</span></p>
     <p><strong>E-mail: </strong> <a href="mailto:${childsParent.eMail}">${childsParent.eMail}</a></p>
     <p><strong>Rate: </strong> <span id="teacher-name2">${childsParent.rate}</span></p>
+    </div>
     <button onclick="paymentHistory(${parentIndex})">Payment History</button>`
+
 
 
     childsParent.children.forEach((child, i) => {

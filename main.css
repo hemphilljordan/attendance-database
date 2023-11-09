@@ -290,12 +290,13 @@ margin-right: 4em;
   */
   
   .column-container {
+    display: inline-block;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
     transition: 0.3s;
     width: 37%;
     background-color: aliceblue;
     margin: 1em 3em;
-    height: 68%;
+    /* height: 68%; */
     border-radius: 32px;
 }
 .column-container:hover {
@@ -583,7 +584,7 @@ padding: 5px;
   .add-student-button {
     margin: 4px; /* Add spacing between buttons */
     background-color: #012e61f5;
-    width: 14em;
+    width: 90%;
     height: 2em;
     padding: 8px 42px;
     border-radius: 3px;
@@ -613,8 +614,12 @@ padding: 5px;
   }
   
   #teacher-student-parent-info {
-    text-align: left;
+    text-align: center;
     padding-left: 1em;
+}
+
+.child-info {
+    text-align: left;
 }
 
 /* .attendance-month {
@@ -642,7 +647,7 @@ strong {
 .add-new-student {
     margin: 4px; /* Add spacing between buttons */
     background-color: green;
-    width: 14em;
+    width: 90%;
     height: 2em;
     padding: 8px 42px;
     border-radius: 3px;
