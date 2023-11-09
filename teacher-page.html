@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png">
+    <title>Checker</title>
+    <script src="https://kit.fontawesome.com/73358cb070.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="Signup.css"> -->
+    <link rel="stylesheet" href="teacher-page.css">
+    <style>
+    /* #loginForm{
+        display: none;
+        } */
+        /* #form{ display: none;
+        } */
+</style>
+</head>
+
+<body>
+
+
+    <a href="main.html"><img  id="logoLogin" src="logo.png" alt="logo" onclick="thePage()"></a>
+  
+    <div class="october-2023">
+
+<!-- <WEEK ONE> -->
+    <div class="container" id="week-one-list">
+        <div class="column">
+            <button class="arrow-button" id="previous-week">&lt;</button>
+            <button class="arrow-button" id="next-week">&gt;</button>
+        </div>
+        <div class="column">
+            <h2 id="wk-one">October - Week One</h2> <!-- Move the <h2> inside the column -->
+            <h3 id="wk-dates">Mon - Mon</h3>
+             <div class="column" id="current-week">
+                
+             </div>
+    </div>
+
+<!-- <WEEK TWO> -->
+    <div class="container" id="week-two-list" style="display: none">
+        <div class="column">
+            <button class="arrow-button" onclick="toWeekOne()">&lt;</button>
+            <button class="arrow-button" onclick="toWeekThree()">&gt;</button>
+        </div>
+        <div class="column">
+            <h2 id="wk-two">October - Week Two</h2> <!-- Move the <h2> inside the column -->
+            <button class="studentButton" id="btn1-2">Brayden</button>
+            <button class="studentButton" id="btn2-2">Tristan</button>
+        </div>
+        <div class="column">
+            <button class="studentButton" id="btn3-2">Poppy</button>
+            <button class="studentButton" id="btn4-2">Levi</button>
+        </div>
+        <div class="column">
+            <button class="studentButton" id="btn5-2">Aspen</button>
+            <button class="studentButton" id="btn6-2">Hunter</button>
+        </div>
+        <div class="column">
+            <button class="studentButton" id="btn7-2">Thomas</button>
+            <button class="studentButton" id="btn8-2">Miles</button>
+        </div>
+        <div class="column">
+            <button class="saveButton" id="btn-8">Save This Week</button>
+            <button class="saveButton" id="get-month-overview">This Month</button>
+        </div>
+    </div>
+
+<!-- <WEEK THREE> -->
+    <div class="container" id="week-three-list" style="display: none">
+        <div class="column">
+            <button class="arrow-button" onclick="toWeekTwo()">&lt;</button>
+            <button class="arrow-button" onclick="toWeekFour()">&gt;</button>
+        </div>
+        <div class="column">
+            <h2>October - Week Three</h2> <!-- Move the <h2> inside the column -->
+            <button class="studentButton" id="btn1-3">Brayden</button>
+            <button class="studentButton" id="btn2-3">Tristan</button>
+        </div>
+        <div class="column">
+            <button class="studentButton" id="btn3-3">Poppy</button>
+            <button class="studentButton" id="btn4-3">Levi</button>
+        </div>
+        <div class="column">
+            <button class="studentButton" id="btn5-3">Aspen</button>
+            <button class="studentButton" id="btn6-3">Hunter</button>
+        </div>
+        <div class="column">
+            <button class="studentButton" id="btn7-3">Thomas</button>
+            <button class="studentButton" id="btn8-3">Miles</button>
+        </div>
+        <div class="column">
+            <button class="saveButton" id="btn-8">Save This Week</button>
+            <button class="saveButton" onclick="thisMonth()">This Month</button>
+        </div>
+    </div>
+</div>
+<!-- <MONTHLY OVERVIEW> -->
+    <div class="container-table" id="month-list">
+        <div class="button-container" id="buttons">
+
+        </div>
+    </div>
+    <!-- <Invoie List> -->
+        <div class="container" id="schedule-container" style="display: none">
+            <div class="column">
+                <button class="arrow-button" onclick="toWeekThree()">&lt;</button>
+                <!-- <button class="arrow-button" onclick="toWeekFour()">></button> -->
+            </div>
+            <div class="column">
+                <h2>Schedule</h2> <!-- Move the <h2> inside the column -->
+               
+            <div class="column">
+                <button class="saveButton" onclick="studentList()">Back</button>
+                <button class="saveButton">This Month</button>
+            </div>
+        </div>
+       
+
+ 
+    
+    
+        <!-- <input  id="inputButtonLogin" type="button" value="login" onclick="check()"> -->
+<!-- </form> -->
+    <script src="student-list.js"></script>
+    <script src="teacher-page.js"></script>
+   
+
+</body>
+</html>

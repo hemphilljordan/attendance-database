@@ -1,0 +1,367 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  background: url(extra/Signup&Login.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  /* width: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  backdrop-filter: blur(10px);
+}
+  
+  
+form {
+  /* position: absolute; */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50% , -50%); */
+  width: 30rem;
+  height: 67vh;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 1em;
+  box-sizing: border-box;
+  display: grid;
+  justify-items: center;
+  align-content: stretch;
+  /* max-width: 34rem; */
+  margin: 0px 10px;
+
+}
+  
+  /* h2{
+  
+    color: #fff;
+    text-align: center;
+    margin-top: 1.8em;
+    font-size: 3em;
+  
+  } */
+
+  
+/* input[type="text"], [type="password"] {
+  border: none;
+  width: 99%;
+  height: 2em;
+  border-bottom: 0.1em solid#0094ff;
+  background: none;
+  padding: 0.6em;
+  color: #fff;
+} */
+  
+#p1 {
+  /* position: absolute; */
+  /* outline: none; */
+  /* border: none; */
+  /* width: 25em; */
+  /* height: 2em; */
+  /* top: 14em; */
+  /* left: 9em; */
+  /* background: none; */
+  /* padding: 0.6em; */
+  color: #fff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#p2 {
+  /* position: absolute; */
+  /* outline: none; */
+  /* border: none; */
+  /* width: 25em; */
+  height: 2em;
+  /* top: 20em; */
+  /* left: 8em; */
+  background: none;
+  padding: 0.6em;
+  color: #fff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+  /* #inputLoginText{
+  top: 15em;
+  left: 5em;
+  }
+  
+  #inputLoginPassword{
+    top: 22em;
+    left: 5em;
+  
+  } */
+  #logoLogin {
+    position: fixed;
+    top: 12px;
+    left: 10px;
+    width: 4.7em;
+    height: 4.7em;
+}
+  
+  
+  
+  .qqq{
+    width: 75%;
+  }
+  
+.studentButton, .invoiceButton{
+  /* position: absolute; */
+  /* top: 28.3em; */
+  /* left: 11.5em; */
+  width: 10.1em;
+  height: 3.18em;
+  background: #0077ff;
+  border: none;
+  /* outline: none; */
+  color: #fff;
+  border-radius: 0.9em;
+  font-size: .9em;
+  margin-bottom: 0.4em;
+}
+
+.studentButton:hover {
+  cursor: pointer;
+  background: lightblue;
+}
+
+.arrow-button:hover {
+  cursor: pointer;
+  background: lightblue;
+}
+  
+  #inputButtonLogin:hover{
+  background: #fff;
+  color: #0077ff;
+  cursor: pointer;
+
+  }
+
+  .saveButton {
+    /* position: absolute; */
+    /* top: 28.3em; */
+    /* left: 11.5em; */
+    width: 10.1em;
+    height: 3.18em;
+    background: purple;
+    border: none;
+    /* outline: none; */
+    color: #fff;
+    border-radius: 0.9em;
+    font-size: .9em;
+    margin-bottom: 0.4em;
+  }
+
+  .saveButton:hover {
+    cursor: pointer;
+    background: lightblue;
+  }
+
+  #month-list {
+    display: none;
+  }
+
+
+.container {
+  flex-direction: column; /* Stack columns vertically */
+  align-items: center; /* Center items horizontally within each column */
+  max-width: 800px; /* Set a maximum width for the container */
+  margin: 0 auto; /* Center the container horizontally */
+  margin-top: 5em;
+  padding: 20px; /* Add some padding for spacing */
+}
+
+.column {
+  padding: 4px; /* Add padding to the columns for spacing */
+  border-radius: 4px; /* Rounded corners for a nice look (optional) */
+}
+
+/* Additional styles for your content inside the columns */
+.column h2 {
+  text-align: center; /* Center the text within the <h2> element */
+}
+
+.column h3 {
+  text-align: center;
+}
+
+#week-one-list {
+  display: flex;
+}
+
+.wrapper-container {
+  position: relative;
+  z-index: 2; /* Set a higher z-index value */
+  flex-direction: column; /* Stack columns vertically */
+  align-items: center; /* Center items horizontally within each column */
+  max-width: 800px; /* Set a maximum width for the container */
+  margin: 0 auto; /* Center the container horizontally */
+  margin-top: 5em;
+  padding: 20px; /* Add some padding for spacing */
+}
+  
+input {
+  margin: auto;
+  left: 75vw;
+}
+
+.arrow-button {
+  width: 8em;
+  height: 1.3em;
+  background: purple;
+  border: none;
+  /* outline: none; */
+  color: #fff;
+  border-radius: 0.9em;
+  font-size: .9em;
+  margin-bottom: 0.4em;
+  margin: auto;
+}
+
+
+/* NEW TABLE STYLINGS! */
+
+/* table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: black;
+  color: white;
+  table-layout: fixed;
+}
+th, td {
+  padding: 10px;
+  text-align: center;
+  width: 25%; 
+}
+th {
+  background-color: #333;
+  color: white;
+}
+
+} */
+.green-cell {
+  background-color: green;
+}
+
+#my-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+#my-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+#my-table th,
+#my-table td {
+    padding: 12px 15px;
+}
+#my-table tbody tr {
+  border-bottom: 1px solid #f3f3f3;
+}
+
+#my-table tbody tr:nth-of-type(even) {
+  background-color: #dddddd;
+}
+#my-table tbody tr:nth-of-type(odd) {
+  background-color: #ffffff;
+}
+
+#my-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+#my-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+td {
+  padding: 8px;
+  border: 1px solid black;
+}
+#my-table tfoot tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+/* Style the buttons container */
+.button-container {
+  text-align: center; /* Center buttons horizontally */
+  margin-top: 10px; /* Add some space between the table and buttons */
+}
+
+/* Style the buttons */
+.button-container button {
+  padding: 10px 20px;
+  background-color: #009879;
+  color: white; /* Text color */
+  border: none;
+  cursor: pointer;
+  margin-right: 10px; /* Add space between buttons */
+}
+
+/* Style the buttons on hover */
+.button-container button:hover {
+  background-color: lightpurple; /* Hover color */
+}
+
+/* CSS to style the table and button container */
+.container-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px; /* Add margin if necessary */
+}
+
+/* Style the buttons */
+.container-table button {
+  margin-top: 10px; /* Add space between the table and buttons */
+}
+
+
+#schedule-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+#schedule-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+#schedule-table th,
+#schedule-table td {
+    padding: 12px 15px;
+}
+#schedule-table tbody tr {
+  border-bottom: 1px solid #f3f3f3;
+}
+
+#schedule-table tbody tr:nth-of-type(even) {
+  background-color: #dddddd;
+}
+#schedule-table tbody tr:nth-of-type(odd) {
+  background-color: #ffffff;
+}
+
+#schedule-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+#schedule-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+/* td {
+  padding: 8px;
+  border: 1px solid black;
+} */
+#schedule-table tfoot tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}

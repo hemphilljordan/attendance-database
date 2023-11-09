@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="icon" href="logo.png">
+    <title>Checker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="media.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        #DivProfile{
+            display: none;
+        }
+    </style>
+</head>
+  <body>
+   <!-- <div id="opacity"> -->
+
+    <!-- THIS IS THIS MAIN MENUS OF THE PAGE -->
+
+    <div class="area"></div>
+    <nav class="main-menu">
+       <div id="imgdiv"> <img id="img-trener" onclick="teacherPage()" src="extra/defult.png" alt=""> 
+    <p id="NameTrener"></p></div>
+            <ul> 
+                <li>
+                    <a onclick="Show('home')">
+                        <i id="fas1" class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            Home
+                        </span>
+                    </a>
+                  
+                </li>
+                
+                <li class="has-subnav">
+                    <a onclick="Show('schedule')">
+                        <i  id="fas2"class="fa fa-laptop fa-2x"></i>
+                        <span class="nav-text">
+                            Schedule
+                        </span>
+                    </a>
+                </li>
+                <!-- <li class="has-subnav">
+                    <a onclick="Show('feedback')">
+                        <i id="fas3" class="fa fa-table fa-2x"></i>
+                        <span class="nav-text">
+                            Feedback
+                        </span>
+                    </a> -->
+                    <li>
+                        <a onclick="Show('add-teacher')">
+                            <i id="fas4" class="fas fa-user"></i>
+                            <span class="nav-text">
+                                Add Teacher
+                            </span>
+                        </a>
+                      
+                    </li>
+            <ul class="logout">
+                <li>
+                   <a onclick="logout()">
+                         <i id="fas" class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Logout
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+
+        <!-- THIS IS THE MAIN HOME PAGE W BOTH COLUMNS TEACHER/STUDENT ROSTERS/ADDS  -->
+
+<div class="content" id="home"> 
+
+    <h2 class="fosi" id="home-test">Home</h2>
+    <hr id="hrrr">
+<br>
+    <section class="div_contener_home">
+
+        <!-- THIS IS THE LEFT COLUMN STARTING AS TEACHER ROSTER-->
+
+        <div class="column-container">
+           <div id="left-header">  <h1 id="left-column-header">Teacher Roster</h1></div>
+
+            <!-- THIS LEFT COLUMN ID 'STUDENT-ROSTER' HOLDS TEACHER ROSTER /  STUDENT INFO (FROM TEACHER) / PARENT INFO-->
+
+           <div id="teacher-student-parent-info">
+           </div>
+                  
+        <!-- THIS IS THE SIBLING ENTRY FORM THAT GETS DISPLAYED AFTER STUDENT IS ADDED -->
+       
+
+        <div id="sibling" style="display: none;">
+            <!-- <div id="hrblock"></div>  -->
+            <div class="form-container">
+                <div class="left-side">
+                </div>
+                <div class="right-side">
+                    <select id="dropdown2">
+                        <option>Select Teacher</option>
+                    </select>
+                    <select id="dropdown-day2">
+                        <option>Sunday</option>
+                        <option>Monday</option>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                        <option>Thursday</option>
+                        <option>Friday</option>
+                        <option>Saturday</option>
+                    </select>
+                    <div style="display: flex;">
+                        <select id="dropdown-hour2">
+                            <option>12</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                        </select>
+                        <select id="dropdown-minute2">
+                            <option>00</option>
+                            <option>15</option>
+                            <option>30</option>
+                            <option>45</option>
+                        </select>
+                        <select id="dropdown-pm2">
+                            <option>PM</option>
+                            <option>AM</option>
+                        </select>
+                    </div>
+                    <select id="class-length2">
+                        <option>30 min</option>
+                        <option>60 min</option>
+                        <option>90 min</option>
+                        <option>120 min</option> 
+                    </select>
+                    <input id="studentFirst2" placeholder="Student First Name">
+                    <button id="sall2" onclick="confirmSibling()">Confirm Sibling</button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+        <!-- THIS IS THE RIGHT COLUMN STARTING WITH ADD STUDENT-->
+
+
+        <div class="column-container" id="addstudent">
+            <div id="right-header"> <h1 id="right-column-header">Find Parent</h1></div>
+
+                <!-- THIS RIGHT SIDE CONTAINER HAS PARENT PAYMENT HISTORY -->
+
+                <div id="main-right-column">
+                    <div id="main-right-buttons" style="display: flex;"></div>
+                    <input type="text" placeholder="Search Parent" id="parent-search"><button onclick="findParent()" class="add-new-student">Find</button><br>
+                    <button class="add-student-button" onclick="showAddStudentPage()">Add Student</button>
+    
+    
+            </div>
+            
+            <!-- THIS CONTAINER HAS THE ADD STUDENT ENTRY INPUTS -->
+
+            <div id="new-student-entry" style="display: none;">
+                <div id="notes"></div>
+                <!-- <div id="hrblock"></div>  -->
+                <div class="form-container">
+                    <div class="left-side">
+                    </div>
+                    <div class="right-side">
+                        <select id="dropdown">
+                            <option>Select Teacher</option>
+                        </select>
+                        <select id="dropdown-day">
+                            <option>Sunday</option>
+                            <option>Monday</option>
+                            <option>Tuesday</option>
+                            <option>Wednesday</option>
+                            <option>Thursday</option>
+                            <option>Friday</option>
+                            <option>Saturday</option>
+                            <!-- Add other options here -->
+                        </select>
+                        <div style="display: flex;">
+                            <select id="dropdown-hour">
+                                <option>12</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <!-- Add options for hours here -->
+                            </select>
+                            <select id="dropdown-minute">
+                                <option>00</option>
+                                <option>15</option>
+                                <option>30</option>
+                                <option>45</option>
+                                <!-- Add options for minutes here -->
+                            </select>
+                            <select id="dropdown-pm">
+                                <option>PM</option>
+                                <option>AM</option>
+                                <!-- Add options for AM/PM here -->
+                            </select>
+                        </div>
+                        <select id="class-length">
+                            <option>30 min</option>
+                            <option>60 min</option>
+                            <option>90 min</option>
+                            <option>120 min</option> 
+                            
+                            <!-- Add other options for class length here -->
+                        </select>
+                        <input id="studentFirst" placeholder="Student First Name">
+                        <input id="studentLast" placeholder="Student Last Name">
+                        <input id="parent-name" placeholder="Parent Name">
+                        <input type="text" id="phoneNumber" placeholder="Phone Number">
+                        <input id="parent-email" placeholder="E-mail">
+                        <button id="sall" onclick="addStudentToRoster()">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THIS IS THE SECOND CONTAINER TO CONFIRM STUDENT DATA -->
+
+            <div id="new-student-review" style="display: none;">
+                <!-- <div id="notes"></div> -->
+                <!-- <div id="hrblock"></div>  -->
+                <div class="new-student-container">
+                    <div id="student-info">
+                        <!-- <p><strong>Parent Name:</strong> <span id="parent-name1"></span></p> -->
+                        <p><strong>Student Name:</strong> <span id="student-name"></span></p>
+                        <p><strong>Lesson Time:</strong> <span id="lesson-time1"></span></p>
+                        <p><strong>Teacher Name:</strong> <span id="teacher-name1"></span></p>
+                        <!-- <p><strong>Rate:</strong> <span id="rate-name1"></span></p> -->
+                        <!-- <p><strong>Phone Number:</strong> <span id="phone-number1"></span></p>
+                        <p><strong>Email:</strong> <span id="email-name1"></span></p> -->
+                    </div>
+                    </div>
+                    <button class="add-student-button" id="add-sibling">Add Sibling</button>
+                    <button class="add-student-button" onclick="saveStudentData()">Save Student</button>
+                </div>
+
+                <!-- THIS CONTAINER SHOW THE CLICKED TEACHER'S STUDENT ROSTER / AND ATTENDANCE MONTH -->
+
+                <div id="current-teacher-roster">
+                    <div id="teacher-roster-container"></div>
+
+  
+            </div>
+
+                <!-- THIS RIGHT SIDE CONTAINER HAS PARENT PAYMENT HISTORY -->
+
+            <div id="parent-payment-history" style="display: none;">
+                <!-- <strong>Lessons Owed: </strong><br>
+                <strong>Lessons Paid For: </strong><br> -->
+                <!-- <strong>Current Month: </strong><br>
+                <span id="current-paid"></span> -->
+                <select id="payment-month">
+                    <option>Select Month</option>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                </select>
+                <select id="payment-year">
+                    <option>Select Year</option>
+                    <option>2023</option>
+                </select>
+                <button onclick="confirmPayment()">Confirm Payment</button><br>
+                <strong>Previous Payment: </strong><br>
+                <div class="payment-container" id="payment-confirmation">
+                </div>
+        </div>
+                <div id="popup-confirm" class="hidden popup-menu">
+                    <p>Confirm client paid?</p>
+                    <button id="confirmItem" class="add-student-button">Confirm</button>
+                    <button id="no-confirm" class="add-student-button">Do Not Confirm</button>
+                </div>
+                <div id="popup" class="hidden popup-menu">
+                    <p>Delete this item or keep status paid?</p>
+                    <button id="deleteItem" class="add-student-button">Delete</button>
+                    <button id="closeItem" class="add-student-button">Keep Paid</button>
+                </div>
+            
+        
+                  
+                  
+                  
+                
+                   
+            <!-- salwa -->
+        </div>
+       
+    </section>
+
+</div>
+<!-- <<<<<<<<<<<<<<<<<<<<<  ADD TEACHER PAGE  >>>>>>>>>>>>>>>>>>>> -->
+<div class="content" id="add-teacher"> 
+    <h2 class="fosi">Add Teacher</h2>
+    <hr id="hrrr">
+
+
+    <div id="profile">
+        <div id="DivProfile" >
+            <div id="proimg">
+                            <!-- <img id="imgpro22" width="274px" height="274px"  src="extra/defult.png" alt="picture"> -->
+            </div>
+                    <br>
+            <label id="texttt" for="">Firstname:</label>
+            <input id="Firstnamee" type="text" >
+            <label id="texttt" for="">Lastname:</label>
+            <input id="Lastnamee" type="text" >
+            <label id="texttt" for="">Email:</label>
+            <input id="Emaill" type="email" >
+            <label id="texttt" for="">Password:</label>
+            <input id="Passwordd" type="password" >
+            <button id="addteacher" onclick="addTeacherButton()" >Add Teacher</button>
+            </div>
+        <div id="profile1">
+        
+                <div id="proimg">
+                        <!-- <img id="imgpro2" src="extra/defult.png" alt="picture"> -->
+                </div>
+                
+                <div id="proimg1">
+                            <div class="pro">
+                                <span class="colorpro">Firstname</span><br>
+                                <span class="inputcolor" id ="pro11"> </span>
+                            </div>
+                        <!-- <hr class="hrhr"> -->
+                            <div class="pro">
+                                <span class="colorpro">LastName</span><br>
+                                <span class="inputcolor" id ="pro22"></span>
+                            </div>
+                            <!-- <hr class="hrhr">   -->
+                            <div class="pro">
+                                <span class="colorpro">Email</span><br>
+                                <span class="inputcolor" id ="pro33"> </span>
+                            </div>
+                            <!-- <hr class="hrhr">   -->
+                            <div class="pro">
+                                <span onclick="showpasss()" class="colorpro">Password</span><br>
+                                <span class="inputcolor" id ="pro44"></span>
+                            </div>   
+                            <button onclick="showEdit()">Edit</button><button>Save</button>
+                </div>
+        </div>
+
+     
+
+            </div> 
+
+    </div>
+</div>
+
+
+<!-- <<<<<<<<<<<<<<<<<<<<<  OVERALL SCHEDULE PAGE  >>>>>>>>>>>>>>>>>>>> -->
+
+<div class="content" id="schedule">
+<h2 class="fosi">Schedule</h2>
+<hr id="hrrr">
+<br>
+<section id="schedule-table">
+    <table>
+        <thead>
+            <tr>
+                <th class="day-header"></th>
+                <th class="day-header">Sun</th>
+                <th class="day-header">Mon</th>
+                <th class="day-header">Tue</th>
+                <th class="day-header">Wed</th>
+                <th class="day-header">Thu</th>
+                <th class="day-header">Fri</th>
+                <th class="day-header-end">Sat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Create rows for time slots -->
+            <!-- Time slots from 10:00 AM to 10:00 PM -->
+            <tr>
+                <td class="time-slot">10:00 AM</td>
+                <td class="time-slot" id="sun10:00"></td>
+                <td class="time-slot" id="mon10:00"></td>
+                <td class="time-slot" id="tue10:00"></td>
+                <td class="time-slot" id="wed10:00"></td>
+                <td class="time-slot" id="thur10:00"></td>
+                <td class="time-slot" id="fri10:00"></td>
+                <td class="time-slot" id="sat10:00"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">10:30 AM</td>
+                <td class="time-slot" id="sun10:30"></td>
+                <td class="time-slot" id="mon10:30"></td>
+                <td class="time-slot" id="tue10:30"></td>
+                <td class="time-slot" id="wed10:30"></td>
+                <td class="time-slot" id="thur10:30"></td>
+                <td class="time-slot" id="fri10:30"></td>
+                <td class="time-slot" id="sat10:30"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">11:00 AM</td>
+                <td class="time-slot" id="sun11:00"></td>
+                <td class="time-slot" id="mon11:00"></td>
+                <td class="time-slot" id="tue11:00"></td>
+                <td class="time-slot" id="wed11:00"></td>
+                <td class="time-slot" id="thur11:00"></td>
+                <td class="time-slot" id="fri11:00"></td>
+                <td class="time-slot" id="sat11:00"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">11:30 AM</td>
+                <td class="time-slot" id="sun11:30"></td>
+                <td class="time-slot" id="mon11:30"></td>
+                <td class="time-slot" id="tue11:30"></td>
+                <td class="time-slot" id="wed11:30"></td>
+                <td class="time-slot" id="thur11:30"></td>
+                <td class="time-slot" id="fri11:30"></td>
+                <td class="time-slot" id="sat11:30"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">12:00 PM</td>
+                <td class="time-slot" id="sun12:00"></td>
+                <td class="time-slot" id="mon12:00"></td>
+                <td class="time-slot" id="tue12:00"></td>
+                <td class="time-slot" id="wed12:00"></td>
+                <td class="time-slot" id="thur12:00"></td>
+                <td class="time-slot" id="fri12:00"></td>
+                <td class="time-slot" id="sat12:00"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">12:30 PM</td>
+                <td class="time-slot" id="sun12:30"></td>
+                <td class="time-slot" id="mon12:30"></td>
+                <td class="time-slot" id="tue12:30"></td>
+                <td class="time-slot" id="wed12:30"></td>
+                <td class="time-slot" id="thur12:30"></td>
+                <td class="time-slot" id="fri12:30"></td>
+                <td class="time-slot" id="sat12:30"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">1:00 PM</td>
+                <td class="time-slot" id="sun1:00"></td>
+                <td class="time-slot" id="mon1:00"></td>
+                <td class="time-slot" id="tue1:00"></td>
+                <td class="time-slot" id="wed1:00"></td>
+                <td class="time-slot" id="thur1:00"></td>
+                <td class="time-slot" id="fri1:00"></td>
+                <td class="time-slot" id="sat1:00"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">1:30 PM</td>
+                <td class="time-slot" id="sun1:30"></td>
+                <td class="time-slot" id="mon1:30"></td>
+                <td class="time-slot" id="tue1:30"></td>
+                <td class="time-slot" id="wed1:30"></td>
+                <td class="time-slot" id="thur1:30"></td>
+                <td class="time-slot" id="fri1:30"></td>
+                <td class="time-slot" id="sat1:30"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">2:00 PM</td>
+                <td class="time-slot" id="sun2:00"></td>
+                <td class="time-slot" id="mon2:00"></td>
+                <td class="time-slot" id="tue2:00"></td>
+                <td class="time-slot" id="wed2:00"></td>
+                <td class="time-slot" id="thur2:00"></td>
+                <td class="time-slot" id="fri2:00"></td>
+                <td class="time-slot" id="sat2:00"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">2:30 PM</td>
+                <td class="time-slot" id="sun2:30"></td>
+                <td class="time-slot" id="mon2:30"></td>
+                <td class="time-slot" id="tue2:30"></td>
+                <td class="time-slot" id="wed2:30"></td>
+                <td class="time-slot" id="thur2:30"></td>
+                <td class="time-slot" id="fri2:30"></td>
+                <td class="time-slot" id="sat2:30"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">3:00 PM</td>
+                <td class="time-slot" id="sun3:00"></td>
+                <td class="time-slot" id="mon3:00"></td>
+                <td class="time-slot" id="tue3:00"></td>
+                <td class="time-slot" id="wed3:00"></td>
+                <td class="time-slot" id="thur3:00"></td>
+                <td class="time-slot" id="fri3:00"></td>
+                <td class="time-slot" id="sat3:00"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">3:30 PM</td>
+                <td class="time-slot" id="sun3:30"></td>
+                <td class="time-slot" id="mon3:30"></td>
+                <td class="time-slot" id="tue3:30"></td>
+                <td class="time-slot" id="wed3:30"></td>
+                <td class="time-slot" id="thur3:30"></td>
+                <td class="time-slot" id="fri3:30"></td>
+                <td class="time-slot" id="sat3:30"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">4:00 PM</td>
+                <td class="time-slot" id="sun4:00"></td>
+                <td class="time-slot" id="mon4:00"></td>
+                <td class="time-slot" id="tue4:00"></td>
+                <td class="time-slot" id="wed4:00"></td>
+                <td class="time-slot" id="thur4:00"></td>
+                <td class="time-slot" id="fri4:00"></td>
+                <td class="time-slot" id="sat4:00"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">4:30 PM</td>
+                <td class="time-slot" id="sun4:30"></td>
+                <td class="time-slot" id="mon4:30"></td>
+                <td class="time-slot" id="tue4:30"></td>
+                <td class="time-slot" id="wed4:30"></td>
+                <td class="time-slot" id="thur4:30"></td>
+                <td class="time-slot" id="fri4:30"></td>
+                <td class="time-slot" id="sat4:30"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">5:00 PM</td>
+                <td class="time-slot" id="sun5:00"></td>
+                <td class="time-slot" id="mon5:00"></td>
+                <td class="time-slot" id="tue5:00"></td>
+                <td class="time-slot" id="wed5:00"></td>
+                <td class="time-slot" id="thur5:00"></td>
+                <td class="time-slot" id="fri5:00"></td>
+                <td class="time-slot" id="sat5:00"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">5:30 PM</td>
+                <td class="time-slot" id="sun5:30"></td>
+                <td class="time-slot" id="mon5:30"></td>
+                <td class="time-slot" id="tue5:30"></td>
+                <td class="time-slot" id="wed5:30"></td>
+                <td class="time-slot" id="thur5:30"></td>
+                <td class="time-slot" id="fri5:30"></td>
+                <td class="time-slot" id="sat5:30"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">6:00 PM</td>
+                <td class="time-slot" id="sun6:00"></td>
+                <td class="time-slot" id="mon6:00"></td>
+                <td class="time-slot" id="tue6:00"></td>
+                <td class="time-slot" id="wed6:00"></td>
+                <td class="time-slot" id="thur6:00"></td>
+                <td class="time-slot" id="fri6:00"></td>
+                <td class="time-slot" id="sat6:00"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">6:30 PM</td>
+                <td class="time-slot" id="sun6:30"></td>
+                <td class="time-slot" id="mon6:30"></td>
+                <td class="time-slot" id="tue6:30"></td>
+                <td class="time-slot" id="wed6:30"></td>
+                <td class="time-slot" id="thur6:30"></td>
+                <td class="time-slot" id="fri6:30"></td>
+                <td class="time-slot" id="sat6:30"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">7:00 PM</td>
+                <td class="time-slot" id="sun7:00"></td>
+                <td class="time-slot" id="mon7:00"></td>
+                <td class="time-slot" id="tue7:00"></td>
+                <td class="time-slot" id="wed7:00"></td>
+                <td class="time-slot" id="thur7:00"></td>
+                <td class="time-slot" id="fri7:00"></td>
+                <td class="time-slot" id="sat7:00"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">7:30 PM</td>
+                <td class="time-slot" id="sun7:30"></td>
+                <td class="time-slot" id="mon7:30"></td>
+                <td class="time-slot" id="tue7:30"></td>
+                <td class="time-slot" id="wed7:30"></td>
+                <td class="time-slot" id="thur7:30"></td>
+                <td class="time-slot" id="fri7:30"></td>
+                <td class="time-slot" id="sat7:30"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">8:00 PM</td>
+                <td class="time-slot" id="sun8:00"></td>
+                <td class="time-slot" id="mon8:00"></td>
+                <td class="time-slot" id="tue8:00"></td>
+                <td class="time-slot" id="wed8:00"></td>
+                <td class="time-slot" id="thur8:00"></td>
+                <td class="time-slot" id="fri8:00"></td>
+                <td class="time-slot" id="sat8:00"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">8:30 PM</td>
+                <td class="time-slot" id="sun8:30"></td>
+                <td class="time-slot" id="mon8:30"></td>
+                <td class="time-slot" id="tue8:30"></td>
+                <td class="time-slot" id="wed8:30"></td>
+                <td class="time-slot" id="thur8:30"></td>
+                <td class="time-slot" id="fri8:30"></td>
+                <td class="time-slot" id="sat8:30"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">9:00 PM</td>
+                <td class="time-slot" id="sun9:00"></td>
+                <td class="time-slot" id="mon9:00"></td>
+                <td class="time-slot" id="tue9:00"></td>
+                <td class="time-slot" id="wed9:00"></td>
+                <td class="time-slot" id="thur9:00"></td>
+                <td class="time-slot" id="fri9:00"></td>
+                <td class="time-slot" id="sat9:00"></td>
+            </tr>
+            <tr>
+                <td class="time-slot">9:30 PM</td>
+                <td class="time-slot" id="sun9:30"></td>
+                <td class="time-slot" id="mon9:30"></td>
+                <td class="time-slot" id="tue9:30"></td>
+                <td class="time-slot" id="wed9:30"></td>
+                <td class="time-slot" id="thur9:30"></td>
+                <td class="time-slot" id="fri9:30"></td>
+                <td class="time-slot" id="sat9:30"></td>
+            </tr>
+            <!-- Add more rows for other time slots as needed -->
+        </tbody>
+    </table>
+    
+</section>  
+
+<div id="get-teacher-schedule"></div>
+            
+            
+         <div id="addStudentDiv" class="nonei">
+                <!-- display=none -->
+                <!-- we edit here -->
+                <section id="formi">
+                <div>
+                <label>StudentName:</label><br>
+                <input type="text"  id="studentName"><br><br>
+            </div>
+                <div>
+                <label>StudentID:</label><br>
+                <input type="number" id="studentID"><br><br>
+            </div>
+                <div>
+                <label>Task:</label><br>
+                <input type="number" id="studentTS"><br><br>
+            </div>
+                <div>
+                <label>Absent:</label><br>
+                <input type="number" id="studentAB"><br><br>
+            </div>
+                </section>
+                <button id="obida" onclick="addStudent()"><i class="fa-solid fa-circle-plus"> </i>Add Student</button>
+
+            </div>
+            
+            <div id="AddTaskDiv" class="nonei">
+                <label>Add Task:</label><br>
+                <input type="number" id="TOTAL"><br><br>
+                <button id="mohammad" onclick="TotalTask()"><i class="fa-solid fa-circle-plus"> </i>Add</button>
+            </div>
+            <div id="FeedbackDiv"class="nonei">
+              <label >Student Name:</label>
+                <div id="sel">bnn</div><br>
+                <textarea name="" placeholder="Please write a feedback" id="feedbackText" cols="25" rows="5"></textarea><br>
+               
+                <button id="namei"onclick="Feed()"><i class="fa-solid fa-circle-plus"> </i>Add Feedback</button>
+                </div>
+            
+            <br>
+            <!-- <button id="save" onclick="Save()">Save</button> -->
+            
+            <div id="tableContainer"></div>
+        </div>
+
+
+        
+            <div class="content" id="feedback">
+                <h1 class="fosi">Feedback</h1>
+                <hr id="hrrr">
+            <br><br>
+            
+                <section id="tableFeedback"></section>
+            </div>
+           
+<!-- </div> -->
+
+        <script src="student-list.js"></script>
+        <script src="main.js"></script>
+</body>
+</html>
